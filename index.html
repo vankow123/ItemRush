@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ItemRush — Gaming Marketplace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="#">ITEM<span>RUSH</span></a>
+  <nav>
+    <a href="#games">Игри</a><a href="#products">Продукти</a><a href="#reviews">Ревюта</a><a href="#faq">FAQ</a>
+  </nav>
+  <div class="header-actions">
+    <button class="icon-btn" onclick="focusSearch()">⌕</button>
+    <button class="cart-btn" onclick="openCart()">Количка <b id="cartCount">0</b></button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="pill">⚡ БЪРЗА ДОСТАВКА • СИГУРНИ ПОРЪЧКИ</div>
+    <h1>Твоите любими<br><span>game items.</span></h1>
+    <p>MM2, Steal a Brainrot и Fortnite — купувай gaming items бързо и удобно в ItemRush.</p>
+    <div class="hero-buttons">
+      <a class="primary" href="#games">Разгледай игрите →</a>
+      <a class="secondary" href="#products">Виж продуктите</a>
+    </div>
+  </div>
+  <div class="hero-art">
+    <div class="orb orb1"></div><div class="orb orb2"></div>
+    <div class="floating-card c1">🔪<small>MM2</small></div>
+    <div class="floating-card c2">🧠<small>Brainrot</small></div>
+    <div class="floating-card c3">⚡<small>Fortnite</small></div>
+    <div class="hero-logo">IR</div>
+  </div>
+</section>
+
+<section class="trust">
+  <div><strong>10K+</strong><span>Поръчки</span></div>
+  <div><strong>3</strong><span>Популярни игри</span></div>
+  <div><strong>4.9/5</strong><span>Оценка</span></div>
+  <div><strong>24/7</strong><span>Поддръжка</span></div>
+</section>
+
+<section id="games" class="section">
+  <div class="section-head"><div><p class="eyebrow">ИЗБЕРИ ИГРА</p><h2>Пазарувай по игра</h2></div></div>
+  <div class="game-grid">
+    <button class="game-card mm2" onclick="filterGame('MM2')"><div class="game-icon">🔪</div><div><span>ROBLOX</span><h3>Murder Mystery 2</h3><p>Godly • Knives • Sets</p></div><b>→</b></button>
+    <button class="game-card brain" onclick="filterGame('Steal a Brainrot')"><div class="game-icon">🧠</div><div><span>ROBLOX</span><h3>Steal a Brainrot</h3><p>Brainrots • Mutations • Traits</p></div><b>→</b></button>
+    <button class="game-card fort" onclick="filterGame('Fortnite')"><div class="game-icon">⚡</div><div><span>EPIC GAMES</span><h3>Fortnite</h3><p>V-Bucks • Packs • Gifts</p></div><b>→</b></button>
+  </div>
+</section>
+
+<section id="products" class="section products-section">
+  <div class="section-head">
+    <div><p class="eyebrow">ПОПУЛЯРНИ</p><h2>Последни продукти</h2></div>
+    <div class="search"><input id="search" oninput="renderProducts()" placeholder="Търси продукт..."><button>⌕</button></div>
+  </div>
+  <div class="filters">
+    <button class="active" onclick="setFilter('Всички',this)">Всички</button>
+    <button onclick="setFilter('MM2',this)">MM2</button>
+    <button onclick="setFilter('Steal a Brainrot',this)">Brainrot</button>
+    <button onclick="setFilter('Fortnite',this)">Fortnite</button>
+  </div>
+  <div id="productGrid" class="product-grid"></div>
+</section>
+
+<section id="reviews" class="section reviews">
+  <div class="section-head"><div><p class="eyebrow">ОТ КЛИЕНТИТЕ</p><h2>Какво казват играчите</h2></div></div>
+  <div class="review-grid">
+    <article><div class="stars">★★★★★</div><p>„Поръчката пристигна супер бързо и всичко беше точно както е описано.“</p><b>Alex</b><small>MM2 player</small></article>
+    <article><div class="stars">★★★★★</div><p>„Много лесен сайт и страхотен избор за Brainrot. Определено ще поръчам пак.“</p><b>Viktor</b><small>Roblox player</small></article>
+    <article><div class="stars">★★★★★</div><p>„Checkout-ът е лесен, а поддръжката отговори бързо.“</p><b>Daniel</b><small>Fortnite player</small></article>
+  </div>
+</section>
+
+<section id="faq" class="section faq">
+  <div class="section-head"><div><p class="eyebrow">ПОМОЩ</p><h2>Често задавани въпроси</h2></div></div>
+  <details><summary>Колко време отнема доставката?</summary><p>В демонстрационната версия това е примерен текст. След свързване на реална система за доставка тук ще се показват точните срокове.</p></details>
+  <details><summary>Как плащам?</summary><p>Checkout интерфейсът е готов за интеграция с избран платежен доставчик.</p></details>
+  <details><summary>Мога ли да получа помощ?</summary><p>Да — добави Discord или support система към сайта при реалното пускане.</p></details>
+</section>
+</main>
+
+<footer><div class="logo">ITEM<span>RUSH</span></div><p>Gaming marketplace за любимите ти игри.</p><div>© 2026 ItemRush</div></footer>
+
+<div id="cart" class="overlay" onclick="if(event.target===this)closeCart()">
+  <aside class="cart-panel"><button class="close" onclick="closeCart()">×</button><h2>Твоята количка</h2><div id="cartItems"></div><div class="cart-total"><span>Общо</span><strong id="total">€0.00</strong></div><button class="primary full" onclick="checkout()">Продължи към checkout →</button></aside>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
