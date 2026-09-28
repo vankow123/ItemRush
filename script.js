@@ -1,5 +1,5 @@
 const products=[
-{id:1,game:"MM2",name:"Chroma Fang",price:14.99,icon:"🔪"},
+{id:1,game:"MM2",name:"IceWing",price:3.00,image: "ice.png"
 {id:2,game:"MM2",name:"Godly Set",price:24.99,icon:"⚔️"},
 {id:3,game:"MM2",name:"Icebreaker",price:9.99,icon:"🧊"},
 {id:4,game:"Steal a Brainrot",name:"Rare Brainrot",price:7.99,icon:"🧠"},
